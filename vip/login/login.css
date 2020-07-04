@@ -1,0 +1,12 @@
+body{
+        padding: 50px;
+        background-image: url(https://preview.redd.it/vda9rbt01en01.png?width=960&crop=smart&auto=webp&s=a669dd6fe1a2f38c08684b43f0253f2dd4d6f9a0);
+        background-size: cover;
+}
+
+.loginform {
+        margin: 0 auto;
+        background-color: #ccc;
+        border-radius: 3px;
+        width: 600px;
+}
