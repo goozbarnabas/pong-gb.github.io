@@ -130,11 +130,11 @@
           topinumber1 = parseInt(topinumber1, 10);
           var lefttonumber = parseInt(leftnumber, 10);
 
-          if (topinumber1 < 10) {
+          if (topinumber1 < 1) {
             fuggoleges = -fuggoleges;
           }
 
-          if (topinumber1 > 400) {
+          if (topinumber1 > 390) {
             fuggoleges = -fuggoleges;
           }
 
@@ -157,7 +157,7 @@
             topnumber4 = parseInt(topnumber4, 10);
             topnumber5 = parseInt(topnumber5, 10);
 
-            if (lefttonumber > 982) {
+            if (lefttonumber > 972) {
               // labda kozepe > uto.top && labda kozepe << uto.top+uto.height
               if (
                 topnumber5 + 5 > topnumber4 &&
@@ -171,7 +171,7 @@
               } else {
                 vegigert = false;
                 vegigert1 = true;
-                if (lefttonumber > 995) {
+                if (lefttonumber > 990) {
                   fuggoleges = 0;
                   vizszintes = 0;
                 }
@@ -202,7 +202,7 @@
 
             topnumber6 = parseInt(topnumber6, 10);
             topnumber7 = parseInt(topnumber7, 10);
-            if (lefttonumber < 28) {
+            if (lefttonumber < 20) {
               if (
                 topnumber7 + 5 > topnumber6 &&
                 topnumber7 + 5 < topnumber6 + 50
@@ -215,7 +215,7 @@
               } else {
                 vegigert = true;
                 vegigert1 = false;
-                if (lefttonumber < 10) {
+                if (lefttonumber < 1) {
                   fuggoleges = 0;
                   vizszintes = 0;
                 }

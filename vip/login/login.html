@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html>
-        <head>
-                <title>VIP részleg bejelentkezés</title>
-                <script src="login.js"></script>
-                <link rel="icon" type="image/png" sizes="32x32" href="../../pics/favicon-32x32.png">
-                <link type="text/css" href="login.css" rel="stylesheet">
-                <meta charset="utf-8">
-        </head>
-        <body>
-                <div id="loginform" class="loginform">
-                        <input type="text" id="username">
-                        <input type="password" id="password">
-                        <button onclick="login()">Bejelentkezés</button>
-                </div>
-        </body>
+  <head>
+    <title>VIP részleg bejelentkezés</title>
+    <script src="login.js"></script>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../pics/favicon-32x32.png"
+    />
+    <link type="text/css" href="login.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div class="topnav">
+      <img
+        class="logo1"
+        onclick="window.location = 'https://pong-game.tk'"
+        src="../../pics/pong_logo.png"
+        alt=" "
+      />
+      <img
+        class="logo2"
+        onclick="window.location = 'https://goozbarnabas.gq'"
+        src="../../pics/goozbarnabas_logo.png"
+        alt=" "
+      />
+    </div>
+    <div id="loginform" class="loginform">
+      <br />
+      <h3>Bejelentkezés</h3>
+      <input type="text" id="username" placeholder="Felhasználónév" />
+      <input type="password" id="password" placeholder="Jelszó" />
+      <br />
+      <button onclick="login()">Tovább</button>
+    </div>
+  </body>
 </html>
