@@ -1,275 +1,277 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="pics/favicon-32x32.png"
-    />
+
+<head>
+    <link rel="icon" type="image/png" sizes="32x32" href="pics/favicon-32x32.png" />
     <meta charset="utf8" />
     <script>
-      function indulas() {
-        mozogosszevissza();
-        indulas2();
-      }
-      function indulas2() {
-        document
-          .getElementById("elougroabkezd")
-          .classList.remove("elougroabkezd");
-        document
-          .getElementById("elougroabkezd")
-          .classList.add("elougroabkezdopen");
-      }
-      function restart() {
-        window.location.reload();
-      }
-      function nyert() {
-        var intervalId1 = setInterval(function () {
-          if (document.getElementById("balszamlalo").innerText == "5") {
-            if (vege == 1) {
-              document
-                .getElementById("elougroab")
-                .classList.remove("elougroab");
-              document
-                .getElementById("elougroab")
-                .classList.add("elougroabopen");
-              document.getElementById("jatekosnyer").innerText =
-                "Gratulálok a bal játékosnak!";
-            }
-          }
-          if (document.getElementById("jobbszamlalo").innerText == "5") {
-            if (vege == 1) {
-              document
-                .getElementById("elougroab")
-                .classList.remove("elougroab");
-              document
-                .getElementById("elougroab")
-                .classList.add("elougroabopen");
-              document.getElementById("jatekosnyer").innerText =
-                "Gratulálok a jobb játékosnak!";
-            }
-          }
-        }, 25);
-      }
-      var vege1 = false;
-      var vege = 0;
-      var vizszintes = 3;
-      var fuggoleges = 3;
-      document.addEventListener("keypress", function (e) {
-        e = e || window.event;
-        console.log(e);
-        if (e.keyCode == 119) {
-          //console.log('semmi')
-          var element98 = document.getElementById("uto1"),
-            style98 = window.getComputedStyle(element98),
-            topnumber198 = style98.getPropertyValue("top");
-
-          var topnumber298 = parseInt(topnumber198, 10);
-          console.log(topnumber298);
-          topnumber298 = topnumber298 - 8;
-          console.log(topnumber298);
-          document.getElementById("uto1").style.top = `${topnumber298}px`;
-        } else if (e.keyCode == 115) {
-          console.log("semmi");
-          var element99 = document.getElementById("uto1"),
-            style99 = window.getComputedStyle(element99),
-            topnumber199 = style99.getPropertyValue("top");
-
-          var topnumber299 = parseInt(topnumber199, 10);
-          console.log(topnumber299);
-          topnumber299 = topnumber299 + 8;
-          console.log(topnumber299);
-          document.getElementById("uto1").style.top = `${topnumber299}px`;
-        } else if (e.keyCode == 111) {
-          console.log("semmi");
-          var element = document.getElementById("uto2"),
-            style = window.getComputedStyle(element),
-            topnumber3 = style.getPropertyValue("top");
-
-          var topnumber4 = parseInt(topnumber3, 10);
-          console.log(topnumber4);
-          topnumber4 = topnumber4 - 8;
-          console.log(topnumber4);
-          document.getElementById("uto2").style.top = `${topnumber4}px`;
-        } else if (e.keyCode == 108) {
-          console.log("semmi");
-          var element = document.getElementById("uto2"),
-            style = window.getComputedStyle(element),
-            topnumber3 = style.getPropertyValue("top");
-
-          var topnumber4 = parseInt(topnumber3, 10);
-          console.log(topnumber4);
-          topnumber4 = topnumber4 + 8;
-          console.log(topnumber4);
-          document.getElementById("uto2").style.top = `${topnumber4}px`;
+        function indulas() {
+            var ejatekosnev = document.getElementById("ejatekosnev").value;
+            var kjatekosnev = document.getElementById("kjatekosnev").value;
+            document.getElementById("baljatekos").innerText = ejatekosnev;
+            document.getElementById("jobbjatekos").innerText = kjatekosnev;
+            mozogosszevissza();
+            indulas2();
         }
-        if (vege1 == true && e.keyCode == 32) {
-          console.log("itt");
-          document.getElementById("labda").style.top = "175px";
-          document.getElementById("labda").style.left = "497px";
-          vizszintes = 3;
-          fuggoleges = 3;
-          vege1 = false;
-          vege = 0;
+
+        function indulas2() {
+            document
+                .getElementById("elougroabkezd")
+                .classList.remove("elougroabkezd");
+            document
+                .getElementById("elougroabkezd")
+                .classList.add("elougroabkezdopen");
         }
-        // use e.keyCode
-      });
-      function mozogosszevissza() {
-        var sebesseg = 25;
-        var jobbszamlalo = 0;
-        var balszamlalo = 0;
-        var vegigert = false;
-        var vegigert1 = true;
-        var intervalId = setInterval(function () {
-          var element = document.getElementById("labda"),
-            style = window.getComputedStyle(element),
-            leftnumber = style.getPropertyValue("left"),
-            topinumber1 = style.getPropertyValue("top");
 
-          topinumber1 = parseInt(topinumber1, 10);
-          var lefttonumber = parseInt(leftnumber, 10);
+        function restart() {
+            window.location.reload();
+        }
 
-          if (topinumber1 < 1) {
-            fuggoleges = -fuggoleges;
-          }
-
-          if (topinumber1 > 390) {
-            fuggoleges = -fuggoleges;
-          }
-
-          if (vegigert1 == true) {
-            lefttonumber = lefttonumber + vizszintes;
-            topinumber1 = topinumber1 + fuggoleges;
-            //console.log(lefttonumber);
-            document.getElementById("labda").style.left = `${lefttonumber}px`;
-            document.getElementById("labda").style.top = `${topinumber1}px`;
-            // console.log(document.getElementById('labda').style.top)
-
-            var element2 = document.getElementById("uto2"),
-              style2 = window.getComputedStyle(element2),
-              topnumber4 = style2.getPropertyValue("top");
-
-            var element3 = document.getElementById("labda"),
-              style3 = window.getComputedStyle(element3),
-              topnumber5 = style3.getPropertyValue("top");
-
-            topnumber4 = parseInt(topnumber4, 10);
-            topnumber5 = parseInt(topnumber5, 10);
-
-            if (lefttonumber > 972) {
-              // labda kozepe > uto.top && labda kozepe << uto.top+uto.height
-              if (
-                topnumber5 + 5 > topnumber4 &&
-                topnumber5 + 5 < topnumber4 + 50
-              ) {
-                console.log("összeutkoztem");
-                vegigert = true;
-                vegigert1 = false;
-                fuggoleges = -fuggoleges;
-                sebesseg++;
-              } else {
-                vegigert = false;
-                vegigert1 = true;
-                if (lefttonumber > 990) {
-                  fuggoleges = 0;
-                  vizszintes = 0;
+        function nyert() {
+            var intervalId1 = setInterval(function() {
+                if (document.getElementById("balszamlalo").innerText == "5") {
+                    if (vege == 1) {
+                        document
+                            .getElementById("elougroab")
+                            .classList.remove("elougroab");
+                        document
+                            .getElementById("elougroab")
+                            .classList.add("elougroabopen");
+                        document.getElementById("jatekosnyer").innerText =
+                            "Gratulálok a bal játékosnak!";
+                    }
                 }
-                vege++;
-                if (vege == 1) {
-                  balszamlalo++;
-                  document.getElementById(
-                    "balszamlalo"
-                  ).innerText = balszamlalo;
+                if (document.getElementById("jobbszamlalo").innerText == "5") {
+                    if (vege == 1) {
+                        document
+                            .getElementById("elougroab")
+                            .classList.remove("elougroab");
+                        document
+                            .getElementById("elougroab")
+                            .classList.add("elougroabopen");
+                        document.getElementById("jatekosnyer").innerText =
+                            "Gratulálok a jobb játékosnak!";
+                    }
                 }
-                vege1 = true;
-              }
+            }, 25);
+        }
+        var vege1 = false;
+        var vege = 0;
+        var vizszintes = 3;
+        var fuggoleges = 3;
+        document.addEventListener("keypress", function(e) {
+            e = e || window.event;
+            console.log(e);
+            if (e.keyCode == 119) {
+                //console.log('semmi')
+                var element98 = document.getElementById("uto1"),
+                    style98 = window.getComputedStyle(element98),
+                    topnumber198 = style98.getPropertyValue("top");
+
+                var topnumber298 = parseInt(topnumber198, 10);
+                console.log(topnumber298);
+                topnumber298 = topnumber298 - 8;
+                console.log(topnumber298);
+                document.getElementById("uto1").style.top = `${topnumber298}px`;
+            } else if (e.keyCode == 115) {
+                console.log("semmi");
+                var element99 = document.getElementById("uto1"),
+                    style99 = window.getComputedStyle(element99),
+                    topnumber199 = style99.getPropertyValue("top");
+
+                var topnumber299 = parseInt(topnumber199, 10);
+                console.log(topnumber299);
+                topnumber299 = topnumber299 + 8;
+                console.log(topnumber299);
+                document.getElementById("uto1").style.top = `${topnumber299}px`;
+            } else if (e.keyCode == 111) {
+                console.log("semmi");
+                var element = document.getElementById("uto2"),
+                    style = window.getComputedStyle(element),
+                    topnumber3 = style.getPropertyValue("top");
+
+                var topnumber4 = parseInt(topnumber3, 10);
+                console.log(topnumber4);
+                topnumber4 = topnumber4 - 8;
+                console.log(topnumber4);
+                document.getElementById("uto2").style.top = `${topnumber4}px`;
+            } else if (e.keyCode == 108) {
+                console.log("semmi");
+                var element = document.getElementById("uto2"),
+                    style = window.getComputedStyle(element),
+                    topnumber3 = style.getPropertyValue("top");
+
+                var topnumber4 = parseInt(topnumber3, 10);
+                console.log(topnumber4);
+                topnumber4 = topnumber4 + 8;
+                console.log(topnumber4);
+                document.getElementById("uto2").style.top = `${topnumber4}px`;
             }
-          } else if (vegigert == true) {
-            lefttonumber = lefttonumber - vizszintes;
-            topinumber1 = topinumber1 - fuggoleges;
-            //console.log(lefttonumber)
-            document.getElementById("labda").style.left = `${lefttonumber}px`;
-            document.getElementById("labda").style.top = `${topinumber1}px`;
-
-            var element4 = document.getElementById("uto1"),
-              style4 = window.getComputedStyle(element4),
-              topnumber6 = style4.getPropertyValue("top");
-
-            var element5 = document.getElementById("labda"),
-              style5 = window.getComputedStyle(element5),
-              topnumber7 = style5.getPropertyValue("top");
-
-            topnumber6 = parseInt(topnumber6, 10);
-            topnumber7 = parseInt(topnumber7, 10);
-            if (lefttonumber < 20) {
-              if (
-                topnumber7 + 5 > topnumber6 &&
-                topnumber7 + 5 < topnumber6 + 50
-              ) {
-                console.log("összeutkoztem");
-                vegigert = false;
-                vegigert1 = true;
-                fuggoleges = -fuggoleges;
-                sebesseg++;
-              } else {
-                vegigert = true;
-                vegigert1 = false;
-                if (lefttonumber < 1) {
-                  fuggoleges = 0;
-                  vizszintes = 0;
-                }
-
-                vege++;
-                if (vege == 1) {
-                  jobbszamlalo++;
-                  document.getElementById(
-                    "jobbszamlalo"
-                  ).innerText = jobbszamlalo;
-                }
-                vege1 = true;
-              }
+            if (vege1 == true && e.keyCode == 32) {
+                console.log("itt");
+                document.getElementById("labda").style.top = "175px";
+                document.getElementById("labda").style.left = "497px";
+                vizszintes = 3;
+                fuggoleges = 3;
+                vege1 = false;
+                vege = 0;
             }
-          }
-        }, sebesseg);
-      }
+            // use e.keyCode
+        });
+
+        function mozogosszevissza() {
+            var sebesseg = 25;
+            var jobbszamlalo = 0;
+            var balszamlalo = 0;
+            var vegigert = false;
+            var vegigert1 = true;
+            var intervalId = setInterval(function() {
+                var element = document.getElementById("labda"),
+                    style = window.getComputedStyle(element),
+                    leftnumber = style.getPropertyValue("left"),
+                    topinumber1 = style.getPropertyValue("top");
+
+                topinumber1 = parseInt(topinumber1, 10);
+                var lefttonumber = parseInt(leftnumber, 10);
+
+                if (topinumber1 < 1) {
+                    fuggoleges = -fuggoleges;
+                }
+
+                if (topinumber1 > 390) {
+                    fuggoleges = -fuggoleges;
+                }
+
+                if (vegigert1 == true) {
+                    lefttonumber = lefttonumber + vizszintes;
+                    topinumber1 = topinumber1 + fuggoleges;
+                    //console.log(lefttonumber);
+                    document.getElementById("labda").style.left = `${lefttonumber}px`;
+                    document.getElementById("labda").style.top = `${topinumber1}px`;
+                    // console.log(document.getElementById('labda').style.top)
+
+                    var element2 = document.getElementById("uto2"),
+                        style2 = window.getComputedStyle(element2),
+                        topnumber4 = style2.getPropertyValue("top");
+
+                    var element3 = document.getElementById("labda"),
+                        style3 = window.getComputedStyle(element3),
+                        topnumber5 = style3.getPropertyValue("top");
+
+                    topnumber4 = parseInt(topnumber4, 10);
+                    topnumber5 = parseInt(topnumber5, 10);
+
+                    if (lefttonumber > 972) {
+                        // labda kozepe > uto.top && labda kozepe << uto.top+uto.height
+                        if (
+                            topnumber5 + 5 > topnumber4 &&
+                            topnumber5 + 5 < topnumber4 + 50
+                        ) {
+                            console.log("összeutkoztem");
+                            vegigert = true;
+                            vegigert1 = false;
+                            fuggoleges = -fuggoleges;
+                            sebesseg++;
+                        } else {
+                            vegigert = false;
+                            vegigert1 = true;
+                            if (lefttonumber > 990) {
+                                fuggoleges = 0;
+                                vizszintes = 0;
+                            }
+                            vege++;
+                            if (vege == 1) {
+                                balszamlalo++;
+                                document.getElementById(
+                                    "balszamlalo"
+                                ).innerText = balszamlalo;
+                            }
+                            vege1 = true;
+                        }
+                    }
+                } else if (vegigert == true) {
+                    lefttonumber = lefttonumber - vizszintes;
+                    topinumber1 = topinumber1 - fuggoleges;
+                    //console.log(lefttonumber)
+                    document.getElementById("labda").style.left = `${lefttonumber}px`;
+                    document.getElementById("labda").style.top = `${topinumber1}px`;
+
+                    var element4 = document.getElementById("uto1"),
+                        style4 = window.getComputedStyle(element4),
+                        topnumber6 = style4.getPropertyValue("top");
+
+                    var element5 = document.getElementById("labda"),
+                        style5 = window.getComputedStyle(element5),
+                        topnumber7 = style5.getPropertyValue("top");
+
+                    topnumber6 = parseInt(topnumber6, 10);
+                    topnumber7 = parseInt(topnumber7, 10);
+                    if (lefttonumber < 20) {
+                        if (
+                            topnumber7 + 5 > topnumber6 &&
+                            topnumber7 + 5 < topnumber6 + 50
+                        ) {
+                            console.log("összeutkoztem");
+                            vegigert = false;
+                            vegigert1 = true;
+                            fuggoleges = -fuggoleges;
+                            sebesseg++;
+                        } else {
+                            vegigert = true;
+                            vegigert1 = false;
+                            if (lefttonumber < 1) {
+                                fuggoleges = 0;
+                                vizszintes = 0;
+                            }
+
+                            vege++;
+                            if (vege == 1) {
+                                jobbszamlalo++;
+                                document.getElementById(
+                                    "jobbszamlalo"
+                                ).innerText = jobbszamlalo;
+                            }
+                            vege1 = true;
+                        }
+                    }
+                }
+            }, sebesseg);
+        }
     </script>
     <title>Pong game</title>
     <link type="text/css" href="pong.css" rel="stylesheet" />
-  </head>
-  <body onload="nyert()">
+</head>
+
+<body onload="nyert()">
     <div class="palya">
-      <div class="uto1" id="uto1"></div>
-      <div class="uto2" id="uto2"></div>
-      <div class="labda" id="labda"></div>
-      <h3 id="balszamlalo">0</h3>
-      <h3 id="jobbszamlalo">0</h3>
-      <div id="elougroab" class="elougroab">
-        <p id="jatekosnyer"></p>
-        <button onclick="restart()">Játék újrakezdése.</button>
-      </div>
-      <div id="elougroabkezd" class="elougroabkezd">
-        <h4>Üdvözöllek a játékban!</h4>
-        <p>
-          A játékot a [W] az [S] valamint az [O] és az [L] billentyűkkel tudod
-          irányítani<br />valamint a [SZÓKÖZ] billentyűvel tudod újraindítani ha
-          megállt a labda.
-        </p>
-        <button onclick="indulas()">Játék elkezdése.</button>
-      </div>
+        <div class="uto1" id="uto1"></div>
+        <div class="uto2" id="uto2"></div>
+        <div class="labda" id="labda"></div>
+        <h3 id="balszamlalo">0</h3>
+        <h3 id="baljatekos"></h3>
+        <h3 id="jobbjatekos"></h3>
+        <h3 id="jobbszamlalo">0</h3>
+        <div id="elougroab" class="elougroab">
+            <p id="jatekosnyer"></p>
+            <button onclick="restart()">Játék újrakezdése.</button>
+        </div>
+        <div id="elougroabkezd" class="elougroabkezd">
+            <h4>Üdvözöllek a játékban!</h4>
+            <p>
+                A játékot a [W] az [S] valamint az [O] és az [L] billentyűkkel tudod irányítani
+                <br />valamint a [SZÓKÖZ] billentyűvel tudod újraindítani ha megállt a labda.
+            </p>
+            <input type="text" placeholder="1. játékos neve" id="ejatekosnev" />
+            <input type="text" placeholder="2. játékos neve" id="kjatekosnev" />
+            <br>
+            <button onclick="indulas()">Játék elkezdése.</button>
+        </div>
     </div>
     <div class="topnavopen">
-      <a href="vip/login/login.html">VIP</a>
+        <a href="vip/login/login.html">VIP</a>
     </div>
-    <img
-      class="logo1"
-      src="pics/pong_logo.png"
-      onclick=" window.location='https://pong-game.tk' "
-    />
-    <img
-      class="logo2"
-      src="pics/goozbarnabas_logo.png"
-      onclick="window.location = 'https://goozbarnabas.gq' "
-    />
-  </body>
+    <img class="logo1" src="pics/pong_logo.png" onclick=" window.location='https://pong-game.tk' " />
+    <img class="logo2" src="pics/goozbarnabas_logo.png" onclick="window.location = 'https://goozbarnabas.gq' " />
+</body>
+
 </html>
